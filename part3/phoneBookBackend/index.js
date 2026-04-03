@@ -19,6 +19,8 @@ morgan.token('body', function getBody (req,res) {
 })
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'))
 
+const path = require('path')
+app.use(express.static(path.join(__dirname, 'dist')))
 
 let persons = [
     { 
